@@ -1,0 +1,27 @@
+{% extends "CarApp/layout.html" %} {% block body %} {% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'CarApp/orders.css' %}" />
+</head>
+<div class="dbox">
+  <h2>Order Summary</h2>
+  {% for car in cars %}
+
+  <table>
+    <thead>
+      <th>Company</th>
+      <th>Model</th>
+      <th>Type</th>
+      <th>Year</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{car.Cname}}</td>
+        <td>{{car.Model}}</td>
+        <td>{{car.type}}</td>
+        <td>{{car.ModelYear}}</td>
+      </tr>
+    </tbody>
+  </table>
+  {% endfor %}
+</div>
+{% endblock %}

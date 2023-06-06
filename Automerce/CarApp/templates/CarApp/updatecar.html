@@ -1,0 +1,50 @@
+{% extends "CarApp/layout.html" %} {% block body %} {% load static %}
+
+<head>
+  <link rel="stylesheet" href="{% static 'CarApp/updatecar.css' %}" />
+</head>
+
+<div class="dbox">
+  <div class="formbox">
+    <h2 class="text-center">Update Car Information</h2>
+    <form method="post" action="{% url 'update_car' car.id %}">
+      {% csrf_token %}
+      <div class="left">
+        <label for="Model">Model:</label>
+        <input type="text" name="Model" value="{{ car.Model }}" autofocus />
+
+        <label for="price">Price:</label>
+        <input type="text" name="price" value="{{ car.price }}" />
+        {% if error_message %}
+        <p style="color: red" id="error-message" class="error">
+          {{ error_message }}
+        </p>
+        {% endif %}
+        <label for="type">Type:</label>
+        <input type="text" name="type" value="{{ car.type }}" />
+
+        <label for="Cname">Company name:</label>
+        <input type="text" name="Cname" value="{{ car.Cname }}" />
+      </div>
+      <div class="right">
+        <label for="ModelYear">Model Year:</label>
+        <input type="text" name="ModelYear" value="{{ car.ModelYear }}" />
+
+        <label for="colour">Color:</label>
+        <input type="text" name="colour" value="{{ car.colour }}" />
+
+        <label for="engineType">Engine Type:</label>
+        <input type="text" name="engineType" value="{{ car.engineType }}" />
+      </div>
+      <input id="update" type="submit" value="Update" />
+      </form>
+    </div>
+    <div class="button-container">
+      <div class="back-link">
+        <a href="{% url 'specific' car.id %}">Back to car information</a>
+      </div>
+      <div class="delete-link">
+        <a href="{% url 'delete' car.id %}">Delete this car</a>
+    </div>
+  </div>
+{% endblock %}

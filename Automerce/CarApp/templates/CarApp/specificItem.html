@@ -1,0 +1,68 @@
+{% extends "CarApp/layout.html" %}
+{% block body %}
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'CarApp/specific.css' %}" />
+</head>
+<div class="dbox">
+  <h1>{{car.Model}} | {{car.Cname}}</h1>
+
+  <table class="table">
+
+    <tbody>
+      <tr>
+        <th>Model</th>
+        <td>{{car.Model}}</td>
+      </tr>
+
+      <tr>
+        <th>ModelYear</th>
+        <td>{{car.ModelYear}}</td>
+      </tr>
+
+      <tr>
+        <th>Type</th>
+        <td>{{car.type}}</td>
+      </tr>
+
+      <tr>
+        <th>Price</th>
+        <td>{{car.price}}</td>
+      </tr>
+
+      <tr>
+        <th>Colour</th>
+        <td>{{car.colour}}</td>
+      </tr>
+
+      <tr>
+        <th>Engine Type</th>
+        <td>{{car.engineType}}</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+
+  <div class = 'form-container'>
+    <form  action="{% url 'specific' car.id%}" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Buy This Car"/>
+    </form>
+  </div>
+
+  <div class="button-container">
+    <div class="back-link">
+      <a href="{% url 'home' %}">Back to All Cars</a>
+    </div>
+  
+    <div class="update-link">
+      <a href="{% url 'update_car' car.id %}">Update Page</a>
+    </div>
+  </div>
+  
+
+
+</div>
+{% endblock %}

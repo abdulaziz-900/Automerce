@@ -1,0 +1,34 @@
+{% extends "CarApp/layout.html" %} 
+{% block body %} 
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'CarApp/displayCars.css' %}" />
+</head>
+<div class="dbox">
+  <div class = "table-container">
+  <table>
+    <thead>
+      <th>Company</th>
+      <th>Model</th>
+      <th>Type</th>
+      <th>Year</th>
+      <th></th>
+    </thead>
+    <tbody>
+      
+      {% for car in cars %}
+     
+      <tr>
+        <td>{{car.Cname}}</td>
+        <td>{{car.Model}}</td>
+        <td>{{car.type}}</td>
+        <td>{{car.ModelYear}}</td>
+        <td><a href="{% url 'specific' car.id %}">More details</a></td>
+      </tr>
+      {% endfor %}
+  
+    </tbody>
+  </table>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  background: linear-gradient(#F0EBE3, #576F72);
+}
+
+.signup-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.signup-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.signup-box .user-box {
+  position: relative;
+}
+
+.signup-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  outline: none;
+  background: transparent;
+}
+
+#signup {
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 20px;
+  margin-top: 40px;
+  background-color: rgba(0,0,0,0.4);
+  display: inline-block;
+  border-radius: 10px;
+}
+
+#signup:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.signup-box form button:focus {
+  outline: none;
+}
+
+::placeholder{
+  color:#d5d3d3;
+}
+
+p {
+  color: #ffffff;
+}

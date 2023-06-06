@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'CarApp/layout.css' %}">
+    
+                                
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg p-0 navbar-dark" style="background-color: rgba(0, 0, 0, 0.6); border-radius: 0 0 10px 10px;">
+      <a class="navbar-brand" href="{% url 'home'%}">
+        <img src="{% static 'img/islogo.svg' %}" width="100" height="75" class="ml-5" alt="Logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav ml-auto mb-1">
+          <a class="nav-link text-white mr-5" href="{% url 'home'%}">Home</a>
+          <a class="nav-link text-white mr-5" href="{% url 'orders' %}">My Orders</a>
+          <a class="nav-link text-white mr-5" href="signup" id="signup">Signup</a>
+        </div>
+      </div>
+    </nav>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+    {% block body %}
+    {% endblock %}
+  </body>
+</html>
