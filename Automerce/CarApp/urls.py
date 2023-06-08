@@ -7,5 +7,6 @@ urlpatterns = [
     path("<int:carid>",views.displaySpecificItem, name="specific"),
     path("orders", views.displayUserOrders, name="orders"),
     path('update_car/<int:carid>/', views.updateCar, name='update_car'),
-    path('delete/<int:carid>', views.delete, name='delete')
+    path('delete/<int:carid>', views.delete, name='delete'),
+    path('addcar',views.addCar,name='addcar')
 ]

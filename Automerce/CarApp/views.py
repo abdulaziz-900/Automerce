@@ -62,7 +62,7 @@ def displayUserOrders(request):
 
 def updateCar(request, carid):
     car = Cars.objects.get(id=carid)
-    
+     
     if request.method == "POST":
         car.Model=request.POST["Model"]
         try:
@@ -88,6 +88,29 @@ def delete(request, carid):
     return HttpResponseRedirect(reverse("home"))
     
    
+
+def addCar(request):
+    if request.method == "POST":
+        model = request.POST["model"]
+        price = request.POST["price"]
+        type = request.POST["type"]
+        cname = request.POST["cname"]
+        model_year = request.POST["model_year"]
+        colour = request.POST["colour"]
+        engine_type = request.POST["engine_type"]
+
+        car = Cars.objects.create(
+            Model=model,
+            price=price,
+            type=type,
+            Cname=cname,
+            ModelYear=model_year,
+            colour=colour,
+            engineType=engine_type
+        )
+        return HttpResponseRedirect(reverse("home"))
+
+    return render(request, "CarApp/addcar.html")
 
 
         

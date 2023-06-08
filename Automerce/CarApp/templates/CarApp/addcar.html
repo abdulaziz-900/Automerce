@@ -1,0 +1,48 @@
+{% extends "CarApp/layout.html" %} {% block body %} {% load static %}
+<head>
+  <title>Add Car</title>
+  <link rel="stylesheet" href="{% static 'CarApp/addcar.css' %}" />
+</head>
+<div class="dbox">
+  <div class="formbox">
+    <h2 class="text-center">Add car</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div class="left">
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" required /><br /><br />
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required /><br /><br />
+        
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type" required /><br /><br />
+
+        <label for="cname">Cname:</label>
+        <input type="text" id="cname" name="cname" required /><br /><br />
+      </div>
+      <div class="right">
+        <label for="model_year">Model Year:</label>
+        <input
+          type="number"
+          id="model_year"
+          name="model_year"
+          required
+        /><br /><br />
+
+        <label for="colour">Colour:</label>
+        <input type="text" id="colour" name="colour" required /><br /><br />
+
+        <label for="engine_type">Engine Type:</label>
+        <input
+          type="text"
+          id="engine_type"
+          name="engine_type"
+          required
+        /><br /><br />
+      </div>
+      <input id="add" type="submit" value="Add Car" />
+    </form>
+  </div>
+
+  {% endblock %}
