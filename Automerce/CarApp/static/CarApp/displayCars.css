@@ -1,52 +1,78 @@
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 html {
-    height: 100%;
-  }
-  
-  body {
-    background: linear-gradient(#F0EBE3, #576F72);
-  }
+  height: 100%;
+}
 
-  .dbox {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 95%;
-    height: 75%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
-    overflow: auto;
-  }
+body {
+  background: linear-gradient(#f0ebe3, #576f72);
+}
 
-  table {
-    position: absolute;
-    top: 5%;
-    left: 2%;
-    width: 95%;
-    border-radius: 10px;
-    text-align: center;
-    color: #f7f7f7;
-    overflow: hidden;
-  }
+.dbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 75%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  overflow: auto;
+}
 
-  th, td {
-    padding: 20px;
-  }
-  
-  th {
-    background-color: rgba(0,0,0,.3);
-  }
+.table-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: auto;
+}
 
-  td {
-    background-color: rgba(0,0,0,.5);
-  }
+table {
+  position: relative;
+  top: 5%;
+  left: 2%;
+  width: 95%;
+  border-radius: 10px;
+  text-align: center;
+  color: #f7f7f7;
+}
 
-  tr:hover {
-    background-color: #5a5a5a;
-  }
+th,
+td {
+  padding: 20px;
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+td {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+tr:hover {
+  background-color: #5a5a5a;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+}
+
+.button-container a {
+  padding: 10px 20px;
+  background-color: gray;
+  border: 1px solid gray;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #ffffff;
+  margin: 10px;
+  cursor: pointer;
+}
